@@ -1,0 +1,34 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "windows": [
+    "main"
+  ],
+  "permissions": [
+    "core:default",
+    "core:window:allow-minimize",
+    "core:window:allow-toggle-maximize",
+    "core:window:allow-close",
+    "core:window:allow-start-dragging",
+    "core:window:allow-is-maximized",
+    {
+      "identifier": "opener:allow-open-url",
+      "allow": [
+        {
+          "url": "https://github.com/yar2slav/*"
+        },
+        {
+          "url": "ms-windows-store://*"
+        },
+        {
+          "url": "https://apps.microsoft.com/*"
+        },
+        {
+          "url": "ms-settings:*"
+        }
+      ]
+    },
+    "updater:default",
+    "process:allow-restart"
+  ]
+}
