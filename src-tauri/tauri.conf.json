@@ -1,7 +1,7 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
   "productName": "mad installer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "identifier": "org.yaroslav.mad.installer",
   "build": {
     "beforeDevCommand": "bun run dev",
@@ -65,7 +65,7 @@
     "updater": {
       "pubkey": "dW50cnVzdGVkIGNvbW1lbnQ6IG1pbmlzaWduIHB1YmxpYyBrZXk6IEMwN0E3RkNGMzk4NTJGMDQKUldRRUw0VTV6Mzk2d1BjUlIxai95ZmoxMXFVV3FETTlxUDZ3MnF6ZWhHK1pVWlJCVUF4QXRZOEEK",
       "endpoints": [
-        "https://github.com/yar2slav/mad-installer/releases/latest/download/latest.json"
+        "https://github.com/madgram/mad-installer/releases/latest/download/latest.json"
       ],
       "windows": {
         "installMode": "passive"

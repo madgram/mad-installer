@@ -1,5 +1,6 @@
 mod account;
 mod device;
+mod driver;
 mod error;
 mod install;
 mod releases;
@@ -39,6 +40,7 @@ pub fn run() {
         .invoke_handler(tauri::generate_handler![
             platform,
             device::device_status,
+            driver::install_apple_driver,
             releases::list_releases,
             releases::download_release,
             account::account_status,

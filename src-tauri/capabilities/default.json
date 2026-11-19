@@ -15,16 +15,13 @@
       "identifier": "opener:allow-open-url",
       "allow": [
         {
-          "url": "https://github.com/yar2slav/*"
+          "url": "https://github.com/madgram/*"
         },
         {
           "url": "ms-windows-store://*"
         },
         {
           "url": "https://apps.microsoft.com/*"
-        },
-        {
-          "url": "ms-settings:*"
         }
       ]
     },

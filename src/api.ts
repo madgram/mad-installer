@@ -81,6 +81,7 @@ export type Step = "download" | "prepare" | "sign" | "install" | "done";
 export const api = {
   platform: () => invoke<string>("platform"),
   deviceStatus: () => invoke<DeviceStatus>("device_status"),
+  installAppleDriver: () => invoke<string>("install_apple_driver"),
   listReleases: () => invoke<Release[]>("list_releases"),
   downloadRelease: (release: Release) => invoke<void>("download_release", { release }),
   accountStatus: () => invoke<AccountInfo | null>("account_status"),

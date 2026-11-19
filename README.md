@@ -5,13 +5,13 @@
 <h1 align="center">mad installer</h1>
 
 <p align="center">
-  ставит клиент <a href="https://github.com/yar2slav/Madgram-iOS">mad</a> на айфон в пару кликов, прямо с мака или винды
+  ставит клиент <a href="https://github.com/madgram/mad-iOS">mad</a> на айфон в пару кликов, прямо с мака или винды
 </p>
 
 <p align="center">
-  <a href="https://github.com/madgram/mad-installer/releases/latest/download/mad.installer_1.0.0_universal.dmg"><b>скачать для macOS</b></a>
+  <a href="https://github.com/madgram/mad-installer/releases/latest/download/mad-installer-macos.dmg"><b>скачать для macOS</b></a>
   ·
-  <a href="https://github.com/madgram/mad-installer/releases/latest/download/mad.installer_1.0.0_x64-setup.exe"><b>скачать для Windows</b></a>
+  <a href="https://github.com/madgram/mad-installer/releases/latest/download/mad-installer-windows.exe"><b>скачать для Windows</b></a>
   ·
   <a href="#как-пользоваться">как пользоваться</a>
   ·
@@ -66,7 +66,7 @@
 ## если айфон не находится
 
 - **винда пишет «нужна программа Apple Devices»**: поставь её из Microsoft Store, открой один раз, подожди минуту и переподключи кабель
-- **винда пишет «нужен драйвер Apple»**: открой центр обновления Windows → дополнительные параметры → необязательные обновления → обновления драйверов, поставь «Apple, Inc. USBDevice» и переподключи кабель
+- **винда пишет «нужен драйвер Apple»**: нажми «поставить» в этой же строке. винда спросит права администратора, установщик сам найдёт драйвер Apple в Windows Update и поставит его. потом переподключи кабель, а если айфон так и не появится, перезагрузи комп
 - **«айфон не отвечает»**: переподключи кабель напрямую в компьютер, без хабов, и закрой «Устройства Apple», пока ставишь mad
 
 ## ограничения бесплатного Apple ID
@@ -80,7 +80,7 @@
 - пароль уходит только в Apple (по протоколу SRP, в открытом виде не передаётся) и нигде не сохраняется
 - после входа токен сессии и ключ сертификата лежат в системной связке ключей (Keychain на маке, Credential Manager на винде)
 - служебные заголовки входа (anisette) берутся с публичного сервера `ani.iloader.app`, пароль и почта туда не попадают
-- ipa качается прямо с GitHub-релизов `yar2slav/Madgram-iOS` и сверяется по sha256, который отдаёт GitHub
+- ipa качается прямо с GitHub-релизов `madgram/mad-iOS` и сверяется по sha256, который отдаёт GitHub
 - обновления установщика подписаны отдельным ключом, приложение ставит только то, что подписано им
 
 ## сборка

@@ -12,7 +12,7 @@ use tokio::io::AsyncWriteExt;
 
 use crate::error::{AppError, AppResult};
 
-pub const REPO: &str = "yar2slav/Madgram-iOS";
+pub const REPO: &str = "madgram/mad-iOS";
 
 #[derive(Deserialize)]
 struct GhAsset {

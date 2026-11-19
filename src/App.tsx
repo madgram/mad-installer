@@ -7,11 +7,10 @@ import UpdatePill from "./components/UpdatePill";
 import { Button, Check, Emoji, Menu, ProgressBar, Row, Spinner } from "./components/ui";
 import { CertsSheet, ErrorSheet, InfoSheet, LoginSheet } from "./screens/Sheets";
 
-const REPO_URL = "https://github.com/yar2slav/mad-installer";
+const REPO_URL = "https://github.com/madgram/mad-installer";
 const APPLE_DEVICES_STORE = "ms-windows-store://pdp/?ProductId=9NP83LWLPZ9K";
 const APPLE_DEVICES_WEB = "https://apps.microsoft.com/detail/9NP83LWLPZ9K";
 
-const openDriverUpdates = () => openUrl("ms-settings:windowsupdate-optionalupdates").catch(() => openUrl("ms-settings:windowsupdate"));
 const openAppleDevices = () => openUrl(APPLE_DEVICES_STORE).catch(() => openUrl(APPLE_DEVICES_WEB));
 
 type Screen = "home" | "installing" | "done";
@@ -336,15 +335,7 @@ function DeviceRow({ status, platform }: { status: DeviceStatus | null; platform
         />
       );
     case "noDriver":
-      return (
-        <Row
-          icon={<Emoji code="1f50c" />}
-          title={t.deviceNoDriver}
-          subtitle={t.deviceNoDriverSub}
-          tone="warn"
-          accessory={<Button size="small" onClick={openDriverUpdates}>{t.openSettings}</Button>}
-        />
-      );
+      return <DriverRow />;
     case "locked":
       return <Row icon={<Emoji code="1f512" />} title={t.deviceLocked} subtitle={t.deviceLockedSub} accessory={<Spinner small />} />;
     case "trust":
@@ -369,6 +360,40 @@ function DeviceRow({ status, platform }: { status: DeviceStatus | null; platform
     default:
       return <Row icon={<Emoji code="1f50c" />} title={t.deviceNone} subtitle={t.deviceNoneSub} accessory={<Spinner small />} />;
   }
+}
+
+function DriverRow() {
+  const [state, setState] = useState<"idle" | "running" | string>("idle");
+  const run = async () => {
+    setState("running");
+    try {
+      setState(await api.installAppleDriver());
+    } catch (e) {
+      setState(`error ${asError(e).message}`);
+    }
+  };
+  const result =
+    state === "installed" ? t.driverInstalled
+    : state === "reboot" ? t.driverReboot
+    : state === "notFound" ? t.driverNotFound
+    : state.startsWith("error") || state.startsWith("failed") ? t.driverFailed
+    : null;
+  return (
+    <Row
+      icon={<Emoji code="1f50c" />}
+      title={t.deviceNoDriver}
+      subtitle={
+        <>
+          {state === "running" ? t.driverRunning : result ?? t.deviceNoDriverSub}
+          {(state.startsWith("error") || state.startsWith("failed")) && <span className="row-detail">{state}</span>}
+        </>
+      }
+      tone={state === "installed" || state === "reboot" ? undefined : "warn"}
+      accessory={
+        state === "running" ? <Spinner small /> : <Button size="small" onClick={run}>{state === "idle" || state === "cancelled" ? t.driverInstall : t.releaseRetry}</Button>
+      }
+    />
+  );
 }
 
 function Installing({ release, step, progress }: { release: Release | null; step: Exclude<Step, "done">; progress: number }) {
