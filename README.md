@@ -1,13 +1,50 @@
-# mad installer
+<p align="center">
+  <img src="docs/media/icon.png" width="128" height="128" alt="mad installer">
+</p>
 
-ставит [mad](https://github.com/yar2slav/Madgram-iOS) на айфон в пару кликов: подключи айфон кабелем, войди в свой Apple ID, нажми «установить». прога сама скачает выбранный релиз, подпишет его твоим бесплатным сертификатом и поставит на телефон. работает на macOS и Windows.
+<h1 align="center">mad installer</h1>
 
+<p align="center">
+  ставит клиент <a href="https://github.com/yar2slav/Madgram-iOS">mad</a> на айфон в пару кликов, прямо с мака или винды
+</p>
+
+<p align="center">
+  <a href="https://github.com/madgram/mad-installer/releases/latest/download/mad.installer_1.0.0_universal.dmg"><b>скачать для macOS</b></a>
+  ·
+  <a href="https://github.com/madgram/mad-installer/releases/latest/download/mad.installer_1.0.0_x64-setup.exe"><b>скачать для Windows</b></a>
+  ·
+  <a href="#как-пользоваться">как пользоваться</a>
+  ·
+  <a href="https://t.me/+l-wwJloXQ802ZDcy">канал mad</a>
+</p>
+
+<p align="center">
+  <a href="../../releases/latest"><img src="https://img.shields.io/github/v/release/madgram/mad-installer?label=%D0%B2%D0%B5%D1%80%D1%81%D0%B8%D1%8F&color=111111&labelColor=2b2b2e" alt="версия"></a>
+  <a href="../../releases"><img src="https://img.shields.io/github/downloads/madgram/mad-installer/total?label=%D1%81%D0%BA%D0%B0%D1%87%D0%B8%D0%B2%D0%B0%D0%BD%D0%B8%D0%B9&color=111111&labelColor=2b2b2e" alt="скачиваний"></a>
+  <img src="https://img.shields.io/badge/macOS%20%C2%B7%20Windows-111111?labelColor=2b2b2e" alt="macOS и Windows">
+</p>
+
+<p align="center">
+  <a href="https://github.com/madgram/mad-installer/raw/main/docs/media/promo.mp4">
+    <img src="docs/media/preview.gif" width="760" alt="как работает mad installer">
+  </a>
+  <br>
+  <sub><a href="https://github.com/madgram/mad-installer/raw/main/docs/media/promo.mp4">смотреть видео со звуком</a></sub>
+</p>
+
+---
+
+клиента нет в App Store, поэтому его ставят сайдлоадом: подписывают своим Apple ID и заливают на телефон. обычно для этого нужны Sideloadly, AltStore или терминал. mad installer делает всё сам: подключаешь айфон кабелем, входишь в бесплатный Apple ID, жмёшь «установить». программа скачает свежий релиз, подпишет его и поставит на телефон, а через 7 дней продлит подпись одной кнопкой.
+
+<details>
+<summary>скриншоты</summary>
 <p align="center">
   <img src="docs/screenshots/home.jpg" width="49%" alt="главный экран">
   <img src="docs/screenshots/login.jpg" width="49%" alt="вход в Apple ID">
   <img src="docs/screenshots/installing.jpg" width="49%" alt="установка">
   <img src="docs/screenshots/done.jpg" width="49%" alt="готово">
 </p>
+</details>
 
 ## как пользоваться
 
